@@ -4,21 +4,30 @@ $bg-color: #252525;
 $st-text-color: #ccc;
 $nd-text-color: #bbb;
 $rd-text-color: #eee;
+
 body {
     color: $st-text-color;
     background: #252525;
     font-family: 'Microsoft jhengHei';
+
     ::selection {
         background: #7c6f60;
         color: $st-text-color;
     }
+
     &.active {
         overflow-y: hidden;
     }
+
 }
 
 footer {
     background: #222;
+}
+
+.title {
+    color: $st-color;
+    font-size: 2.5rem;
 }
 
 .st-color {
@@ -31,15 +40,21 @@ footer {
 
 //  aside //
 aside {
+    visibility: hidden;
     position: fixed;
     top: 0;
     width: 100%;
     height: 100vh;
     background: $st-color;
     opacity: 0;
-    transform: translateY(-100%);
     transition: all .5s;
     z-index: 10000;
+
+    a {
+        color: $rd-text-color;
+        letter-spacing: .2rem;
+        transition: all .4s;
+    }
 
     wrap {
         position: relative;
@@ -65,26 +80,32 @@ aside {
 }
 
 .active aside {
+    visibility: initial;
     opacity: .95;
     transform: translateY(0);
     overflow-y: hidden;
+
     a {
         color: $rd-text-color;
         letter-spacing: .2rem;
         font-size: 1.3rem;
         transition: all .4s;
+
         +a {
             margin-top: .5rem;
         }
 
     }
+
     a:hover {
         color: #fff;
         letter-spacing: .6rem;
         font-size: 1.5rem;
     }
+
     button {
         opacity: 1;
+
         span {
             display: block;
             width: 50px;
@@ -93,6 +114,7 @@ aside {
             height: 2px;
             border-radius: 5px;
             transform: translateY(5px) rotateZ(45deg);
+
             +span {
                 display: block;
                 width: 50px;
@@ -112,47 +134,57 @@ aside {
     padding: 0;
     background: transparent;
     overflow-x: hidden;
+
     .nav-item {
         &.active {
             border-bottom: 2px solid $st-color;
         }
+
         &.top {
             .nav-link {
                 padding: 2rem .5rem .5rem;
                 font-size: .95rem;
                 transition: .5s;
-                color: $rd-text-color;
+                color: $nd-text-color;
+
                 &:hover {
                     color: $st-color;
                 }
             }
+
             +.top {
                 margin-left: 5rem;
                 transition: .3s;
             }
         }
+
         &.scroll {
             .nav-link {
                 padding: 1rem .5rem .7rem;
                 font-size: .9rem;
                 transition: .5s;
-                color: $rd-text-color;
+                color: $nd-text-color;
+
                 &:hover {
                     color: $st-color;
                 }
             }
+
             +.scroll {
                 margin-left: 3rem;
                 transition: .3s;
             }
         }
     }
+
     .nav-link {
         &.active {
-            border-bottom: 2px solid $st-color;
+            border-bottom: 3px solid $st-color;
+            color: $st-color !important;
             transition: 0s !important;
         }
     }
+
     button {
         display: none;
         position: fixed;
@@ -166,13 +198,14 @@ aside {
         cursor: pointer;
         transform: translateX(0);
         transition: all .5s;
+
         span:nth-child(1) {
             display: block;
             width: 40px;
             max-width: 100%;
             background: $rd-text-color;
             height: 2px;
-            border-radius: 5px;                       
+            border-radius: 5px;
         }
 
         span:nth-child(2) {
@@ -217,6 +250,7 @@ aside {
             }
         }
     }
+
     #navbar {
         button {
             display: block;
@@ -234,6 +268,7 @@ header {
     overflow: hidden;
     transition: all .3s;
     z-index: 0;
+
     video {
         transform: translateX(50%) translateY(50%);
         bottom: 50%;
@@ -244,6 +279,7 @@ header {
         right: 50%;
         width: auto;
     }
+
     &::before {
         content: '';
         position: absolute;
@@ -254,6 +290,7 @@ header {
         background: #130a0170;
         z-index: 1;
     }
+
     &::after {
         content: '';
         position: absolute;
@@ -265,6 +302,7 @@ header {
         opacity: .8;
         z-index: 1;
     }
+
     .text-right {
         color: #ddd;
         position: absolute;
@@ -275,6 +313,7 @@ header {
         z-index: 2;
         transition: all .5s;
     }
+
     .arrow {
         position: absolute;
         animation: arrow 2s infinite;
@@ -284,29 +323,37 @@ header {
         transform: translateX(-50%);
         z-index: 2;
     }
+
     @keyframes arrow {
         0% {
             transform: translate(-50%, 0);
         }
+
         10% {
             transform: translate(-50%, 17px);
         }
+
         20% {
             transform: translate(-50%, 10px);
         }
+
         30% {
             transform: translate(-50%, 14px);
         }
+
         80% {
             transform: translate(-50%, 14px);
         }
+
         100% {
             transform: translate(-50%, 0);
         }
     }
+
     strong {
         font-weight: 500;
     }
+
     p {
         opacity: .8;
     }
@@ -338,21 +385,9 @@ header {
 
 //  關於我
 #about {
-    padding-bottom: 5rem;
     article {
         position: relative;
         z-index: 2;
-        .display-1 {
-            position: absolute;
-            bottom: -7rem;
-            right: -7rem;
-            color: $st-color;
-            font-size: 9rem;
-            font-weight: 700;
-            letter-spacing: -.3rem;
-            opacity: .04;
-            font-family: 'Trebuchet MS';
-        }
     }
 }
 
@@ -364,7 +399,7 @@ header {
 }
 
 @media (max-width: 991px) {
-    #about img {
+    #about .about-img {
         width: 50%;
     }
 }
@@ -374,94 +409,122 @@ header {
         letter-spacing: 2px;
         color: $st-color;
     }
+
+    .skill-item-1 {
+        transition: all .5s;
+    }
+
+    .skill-item-2 {
+        transition: all .5s .2s;
+    }
+
+    .skill-item-3 {
+        transition: all .5s .4s;
+    }
+
+    .skill-item-1,
+    .skill-item-2,
+    .skill-item-3 {
+        overflow: hidden;
+        position: relative;
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    .skill-item-1::after,
+    .skill-item-2::after,
+    .skill-item-3::after {
+        position: absolute;
+        top: -5.5rem;
+        right: -1rem;
+        color: $st-color;
+        font-size: 12rem;
+        font-weight: 700;
+        letter-spacing: -1rem;
+        opacity: .07;
+        font-family: 'Trebuchet MS';
+    }
+
+    .skill-item-1::after {
+        content: '75';
+    }
+
+    .skill-item-2::after {
+        content: '60';
+    }
+
+    .skill-item-3::after {
+        content: '90';
+    }
+
+    .show {
+
+        &.skill-item-1,
+        &.skill-item-2,
+        &.skill-item-3 {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+    }
+
 }
+
+
+
+
+
+
+@media (max-width: 767px) {
+    #skill img {
+        width: 30%;
+    }
+
+}
+
+@media (max-width: 414px) {
+    #skill img {
+        width: 35%;
+    }
+}
+
 
 //  工作經歷
 #experience {
     position: relative;
-    .display-1 {
-        position: absolute;
-        top: 28rem;
-        right: -25rem;
-        color: $st-color;
-        font-size: 10rem;
-        font-weight: 700;
-        letter-spacing: -.3rem;
-        opacity: .04;
-        font-family: 'Trebuchet MS';
-    }
+
     .h1 {
         color: $st-color;
     }
 }
 
-.section-2 {
-    position: relative;
-    padding: 6rem 0 4rem;
-    background-attachment: fixed;
-    background-image: url('https://picsum.photos/g/800/2400/?image=588');
-    background-size: cover;
-}
 
-/* .box {
-    width: 100%;
-    background: #e0e0e0;
-    padding: 1rem 0;
-    display: flex;
-    justify-content: space-evenly;
-}
 
-.box-inner {
-    width: calc(100% / 4 - 1rem);
-    background: rgb(255, 255, 255);
-    box-sizing: border-box;
-    border: 1px solid #dddddd;
-    padding: 1rem 1rem 2rem;
-    border-radius: 5px;
-    box-shadow: 0px 1px 0px rgba(102, 102, 102, 0.1);
-}
-
-.box-inner2 {
-    width: calc(100% / 2 - 1rem);
-    background: rgb(255, 255, 255);
-    box-sizing: border-box;
-    border: 1px solid #dddddd;
-    padding: 1rem 1rem 2rem;
-    border-radius: 5px;
-    box-shadow: 0px 1px 0px rgba(102, 102, 102, 0.1);
-}
-
-@media (max-width: 576px) {
-    .box {
-        flex-direction: column;
-        padding: 0 1rem;
-
-    }
-
-    .box-inner {
-        height: calc(100% / 4 - 1rem);
-        width: 100%;
-    }
-
-    .box-inner2 {
-        height: calc(100% / 2 - 1rem);
-        width: 100%;
-    }
-} */
-
-/*  時間軸 */
-
+//  時間軸 
 .card {
     border: none;
     background: #333;
     color: $nd-text-color;
+    transform: translateY(50px);
+    transition: all .5s;
+    opacity: 0;
 }
+
+.show {
+
+    &.card {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 
 .card-header {
     position: relative;
     border: none;
     color: $rd-text-color;
     background: $nd-color;
+
     &.odd::after {
         content: '';
         position: absolute;
@@ -475,6 +538,7 @@ header {
         border-right: 9px solid transparent;
         border-bottom: 9px solid transparent;
     }
+
     &.even::after {
         content: '';
         position: absolute;
@@ -494,6 +558,7 @@ header {
     font-size: .85rem;
     letter-spacing: 1px;
     line-height: 1.8;
+
     a {
         border: 1px solid $nd-text-color;
         color: $nd-text-color;
@@ -502,6 +567,7 @@ header {
 
 .timeline-section {
     position: relative;
+
     &::after {
         content: "";
         position: absolute;
@@ -516,6 +582,7 @@ header {
 
 .timeline-pointer {
     position: relative;
+
     &::after {
         content: "";
         position: absolute;
@@ -536,15 +603,229 @@ header {
     .timeline-section:after {
         left: 5px;
     }
+
     .timeline-pointer::after {
         left: 5px;
         transform: translateX(75%);
     }
+
     .card-header.odd::after {
         left: -14px;
         border-top: 9px solid $nd-color;
         border-left: 9px solid transparent;
         border-right: 9px solid $nd-color;
         border-bottom: 9px solid transparent;
+    }
+}
+
+
+
+
+//  作品
+
+#portfolio {
+    background: #292929;
+    overflow: hidden;
+}
+
+#portfolio-nav {
+    button {
+        font-size: .8rem;
+        color: $st-text-color;
+        background: #333;
+        border: 1px solid #303030;
+
+
+        &.active {
+            color: $bg-color;
+            background: $st-color;
+            border: 1px solid $nd-color;
+            cursor: initial;
+        }
+
+        &:hover {
+            color: $bg-color;
+            background: $nd-color;
+            border: 1px solid $nd-color;
+        }
+
+        +button {
+            margin-left: .5rem;
+        }
+
+    }
+}
+
+.portfolio-wrapper {
+    transform: translateY(50px);
+    transition: all .5s;
+    opacity: 0;
+}
+
+.show {
+
+    &.portfolio-wrapper {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+
+
+.portfolio-wrap {
+    visibility: hidden;
+    max-height: 0;
+    transform: scale(.7);
+    opacity: 0;
+    transition: all 0s;
+
+    &.active {
+        visibility: initial;
+        max-height: initial;
+        transform: scale(1);
+        opacity: 1;
+        transition: all .7s;
+    }
+}
+
+.portfolio-content {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    .portfolio-item {
+        position: relative;
+        background-size: cover;
+        width: 31.333%;
+        height: 14rem;
+        margin: 0 1% 1rem;
+        border-radius: 2px;
+        overflow: hidden;
+
+        .portfolio-view {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: #130901b0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all .8s;
+            z-index: 1;
+
+            p {
+                font-size: .7rem;
+                margin-bottom: .3rem;
+                letter-spacing: .2rem;
+                color: $nd-text-color;
+            }
+
+        }
+
+        span {
+            position: absolute;
+            background: url('https://picsum.photos/480/600/?random') 50% 50%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            transition: all 3s;
+        }
+
+    }
+
+}
+
+
+.portfolio-item.active {
+
+    .portfolio-view {
+        opacity: 1;
+    }
+
+    span {
+        transform: scale(1.1);
+    }
+}
+
+
+
+@media (max-width: 767px) {
+    .portfolio-content {
+        padding: 0 1rem;
+    }
+
+    .portfolio-content .portfolio-item {
+        width: 48%;
+        margin: 0 1% .8rem;
+        height: 14rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .portfolio-content .portfolio-item {
+        width: 98%;
+        margin: 0 1% 1rem;
+        height: 16rem;
+    }
+}
+
+
+//  聯絡資訊
+
+#contact{
+ 
+    .contact{
+        strong{
+            display: block;
+            font-size: 4rem;
+            font-family: 'Trebuchet MS';
+        }
+
+        p  {
+            margin-top: 3rem;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+    }
+
+}
+
+@media (max-width: 767px) {
+    #contact{
+ 
+        .contact{
+            strong{
+                font-size: 2.5rem;
+            }
+    
+            p  {
+                font-size: 1.5rem;
+            }
+        }
+    }
+    
+}
+
+@media (max-width: 575px) {
+    #contact{
+ 
+        .contact{
+            strong{
+                font-size: 1.8rem;
+            }
+    
+            p  {
+                font-size: 1.5rem;
+            }
+        }
     }
 }
