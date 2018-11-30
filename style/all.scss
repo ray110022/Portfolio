@@ -634,6 +634,7 @@ header {
         color: $st-text-color;
         background: #333;
         border: 1px solid #303030;
+        margin-bottom: .5rem; 
 
 
         &.active {
@@ -651,6 +652,7 @@ header {
 
         +button {
             margin-left: .5rem;
+            
         }
 
     }

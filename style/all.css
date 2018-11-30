@@ -275,7 +275,7 @@ header::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(19, 10, 1, 0.439);
+  background: #130a0170;
   z-index: 1;
 }
 
@@ -286,8 +286,7 @@ header::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: -webkit-linear-gradient(135deg, rgba(94, 67, 17, 0.314) 30%, rgba(168, 77, 3, 0.314) 100%);
-  background: linear-gradient(135deg, rgba(94, 67, 17, 0.314) 30%, rgba(168, 77, 3, 0.314) 100%);
+  background: linear-gradient(135deg, #5f441250 30%, #a84d0350 100%);
   opacity: .8;
   z-index: 1;
 }
@@ -630,6 +629,7 @@ header p {
   color: #ccc;
   background: #333;
   border: 1px solid #303030;
+  margin-bottom: .5rem;
 }
 
 #portfolio-nav button.active {
