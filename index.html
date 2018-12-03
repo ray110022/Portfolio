@@ -41,9 +41,6 @@
     <!--  style -->
     <link rel="stylesheet" href="style/all.css">
     <link rel="stylesheet" href="style/venobox.css" media="screen">
-    <!-- <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script> -->
-    <!-- <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js"></script> -->
-
 </head>
 
 <body>
@@ -968,12 +965,17 @@
     <script src="script/venobox.js"></script>
     <!--  masonry JS -->
     <script src="script/masonry.pkgd.min.js"></script>
+    <script src="script/imagesloaded.pkgd.min.js"></script>
     <script>
         // init Masonry
         var $grid = $('.grid').masonry({
             itemSelector: '.grid-item',
             percentPosition: true,
             columnWidth: '.grid-sizer'
+        });
+        // layout Masonry after each image loads
+        $grid.imagesLoaded().progress(function () {
+            $grid.masonry();
         });
     </script>
 </body>
