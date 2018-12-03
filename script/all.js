@@ -1,10 +1,11 @@
 $(document).ready(function () {
 
+    //  venobox
     $('.venobox').venobox({
         spinColor: '#967958',
         spinner: 'wave',
+        closeBackground: 'transparent',
         overlayClose: false,
-        numeratio: true,
     });
 
     $(window).scroll(function () {
@@ -120,4 +121,14 @@ $(document).ready(function () {
     $('.portfolio-item').mouseleave(function () {
         $(this).removeClass('active');
     });
+
+    // 作品 item 效果  -----------測試
+    $('.grid-item').mouseenter(function () {
+        $(this).siblings().removeClass('active');
+        $(this).toggleClass('active')
+    });
+    $('.grid-item').mouseleave(function () {
+        $(this).removeClass('active');
+    });
+
 });
