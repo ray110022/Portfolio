@@ -25,12 +25,12 @@
             var plugin = this;
             // default options
             var defaults = {
-                arrowsColor : '#B6B6B6',
+                arrowsColor : '#fff',
                 autoplay : false, // same as data-autoplay - thanks @codibit
                 bgcolor: '#fff',
                 border: '0',
                 closeBackground : '#161617',
-                closeColor : "#d2d2d2",
+                closeColor : "#fff",
                 framewidth: '',
                 frameheight: '',
                 gallItems: false,
