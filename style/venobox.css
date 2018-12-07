@@ -182,6 +182,13 @@
 
 @media (max-width: 767px) {
 
+    .vbox-next,
+    .vbox-prev {
+        height: 50px;
+        top: initial;
+        bottom:  .95rem;
+    }
+
     .vbox-next span,
     .vbox-prev span {
         top: initial;
