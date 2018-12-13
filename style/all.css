@@ -370,7 +370,7 @@ header::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #130a0170;
+  background: rgba(19, 10, 1, 0.439);
   z-index: 1;
 }
 
