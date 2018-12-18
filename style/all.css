@@ -370,6 +370,7 @@ header::after {
   left: 0;
   width: 100%;
   height: 100%;
+  background: -webkit-linear-gradient(135deg, #5c3b037a 30%, #92420080 100%);	
   background: linear-gradient(135deg, #5c3b037a 30%, #92420080 100%);
   z-index: 1;
 }
