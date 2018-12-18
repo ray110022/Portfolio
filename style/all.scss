@@ -1,4 +1,4 @@
-@import  'masonry';
+@import 'masonry';
 
 $st-color: #967958;
 $nd-color: #7e6a52;
@@ -34,7 +34,7 @@ footer {
 
 .st-color {
     background: $st-color;
-} 
+}
 
 .st-text-color {
     color: $st-color;
@@ -282,17 +282,6 @@ header {
         width: auto;
     }
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #130a0170;
-        z-index: 1;
-    }
-
     &::after {
         content: '';
         position: absolute;
@@ -300,8 +289,7 @@ header {
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(135deg, #5f441250 30%, #a84d0350 100%);
-        opacity: .8;
+        background: linear-gradient(135deg, #5c3b037a 30%, #92420080 100%);
         z-index: 1;
     }
 
@@ -636,7 +624,7 @@ header {
         color: $st-text-color;
         background: #333;
         border: 1px solid #303030;
-        margin-bottom: .5rem; 
+        margin-bottom: .5rem;
 
 
         &.active {
@@ -654,7 +642,7 @@ header {
 
         +button {
             margin-left: .5rem;
-            
+
         }
 
     }
@@ -784,51 +772,55 @@ header {
 
 //  聯絡資訊
 
-#contact{
+#contact {
 
-    .contact{
-        strong{
-            display: block;
-            font-size: 4rem;
-            font-family: 'Trebuchet MS';
-        }
+    .contact{        
+        font-family: 'Trebuchet MS';
+    }
 
-        p  {
-            margin-top: 3rem;
-            font-size: 2rem;
-            font-weight: 600;
+    hr{
+        width: 100px;
+        background: #555;
+    }
+
+    strong {
+        display: block;
+        font-size: 2rem;
+        margin: 2rem 0 1.5rem 0;
+    }
+
+    .btn{        
+        margin-bottom: 2rem;
+        background: transparent;
+        border-radius:  20px;
+        border: 2px solid #eee;
+
+        &:hover{
+            background: $st-color;
+            border: 2px solid $st-color;
+            color: #000;
         }
     }
 
 }
 
 @media (max-width: 767px) {
-    #contact{
- 
-        .contact{
-            strong{
-                font-size: 2.5rem;
-            }
-    
-            p  {
-                font-size: 1.5rem;
-            }
+    #contact {
+
+        strong {
+            font-size: 2rem;
         }
+
     }
-    
+
 }
 
 @media (max-width: 575px) {
-    #contact{
- 
-        .contact{
-            strong{
-                font-size: 1.8rem;
-            }
-    
-            p  {
-                font-size: 1.5rem;
-            }
+    #contact {
+
+        strong {
+            font-size: 1.7rem;
         }
+
     }
 }

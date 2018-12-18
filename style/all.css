@@ -363,17 +363,6 @@ header video {
   width: auto;
 }
 
-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #130a0170;
-  z-index: 1;
-}
-
 header::after {
   content: '';
   position: absolute;
@@ -381,9 +370,7 @@ header::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: -webkit-linear-gradient(135deg, #5f441250 30%, #a84d0350 100%);
-  background: linear-gradient(135deg, #5f441250 30%, #a84d0350 100%);
-  opacity: .8;
+  background: linear-gradient(135deg, #5c3b037a 30%, #92420080 100%);
   z-index: 1;
 }
 
@@ -873,33 +860,43 @@ header p {
   }
 }
 
-#contact .contact strong {
-  display: block;
-  font-size: 4rem;
+#contact .contact {
   font-family: 'Trebuchet MS';
 }
 
-#contact .contact p {
-  margin-top: 3rem;
+#contact hr {
+  width: 100px;
+  background: #555;
+}
+
+#contact strong {
+  display: block;
   font-size: 2rem;
-  font-weight: 600;
+  margin: 2rem 0 1.5rem 0;
+}
+
+#contact .btn {
+  margin-bottom: 2rem;
+  background: transparent;
+  border-radius: 20px;
+  border: 2px solid #eee;
+}
+
+#contact .btn:hover {
+  background: #967958;
+  border: 2px solid #967958;
+  color: #000;
 }
 
 @media (max-width: 767px) {
-  #contact .contact strong {
-    font-size: 2.5rem;
-  }
-  #contact .contact p {
-    font-size: 1.5rem;
+  #contact strong {
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 575px) {
-  #contact .contact strong {
-    font-size: 1.8rem;
-  }
-  #contact .contact p {
-    font-size: 1.5rem;
+  #contact strong {
+    font-size: 1.7rem;
   }
 }
 /*# sourceMappingURL=all.css.map */
