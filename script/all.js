@@ -2,18 +2,17 @@ $(document).ready(function () {
 
     //  venobox
     $('.venobox').venobox({
-        spinColor: '#967958',
+        spinColor: '#4dc97d',
         spinner: 'wave',
+        arrowsColor:'#333',
         closeBackground: 'transparent',
-        overlayClose: false,
+        overlayClose: true,
     });
 
     $(window).scroll(function () {
         var scrollPos = $(window).scrollTop();
         var windowHeight = $(window).height();
         var aboutPos = $('#about').offset().top;
-        // 背景字滾動
-        // $('.display-1').css('transform', 'translateY(' + (-(scrollPos / 12)) + 'px)');                
 
 
         //  skill滾動事件
@@ -27,7 +26,7 @@ $(document).ready(function () {
         //  card滾動事件
         $('.card').each(function () {
             var skillPos = $(this).offset().top;
-            if ((scrollPos + windowHeight * .8) >= skillPos) {
+            if ((scrollPos + windowHeight * .6) >= skillPos) {
                 $(this).addClass('show');
             }
         });
@@ -35,16 +34,25 @@ $(document).ready(function () {
         //  portfolio-wrapper滾動事件
         $('.portfolio-wrapper').each(function () {
             var skillPos = $(this).offset().top;
-            if ((scrollPos + windowHeight * .8) >= skillPos) {
+            if ((scrollPos + windowHeight * .6) >= skillPos) {
+                $(this).addClass('show');
+            }
+        });
+
+        //  contact滾動事件
+        $('.contact-wrapper').each(function () {
+            var skillPos = $(this).offset().top;
+            if ((scrollPos + windowHeight * .6) >= skillPos) {
                 $(this).addClass('show');
             }
         });
 
 
+
         // navbar事件
         $('#navbar').each(function () {
             if ((scrollPos + windowHeight / 2) >= aboutPos) {
-                $(this).css('background', '#252525f0');
+                $(this).css('background', '#f5f5f5f5');
                 $('.nav-item').removeClass('top').addClass('scroll');
             } else {
                 $(this).css('background', 'transparent');
@@ -93,7 +101,7 @@ $(document).ready(function () {
     });
 
     // 作品button切換
-    $('#portfolio-nav button').click(function () {
+    $('#js-filters-awesome-work button').click(function () {
         $(this).siblings().removeClass('active');
         $(this).addClass('active');
     });

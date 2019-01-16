@@ -30,7 +30,7 @@
                 bgcolor: '#fff',
                 border: '0',
                 closeBackground : '#161617',
-                closeColor : "#fff",
+                closeColor : "#333",
                 framewidth: '',
                 frameheight: '',
                 gallItems: false,
@@ -43,7 +43,7 @@
                 numerationColor : '#d2d2d2',
                 numerationPosition : 'top', // 'top' || 'bottom'
                 overlayClose: true, // disable overlay click-close - thanx @martybalandis
-                overlayColor : 'rgba(23,23,23,0.85)',
+                overlayColor : 'rgba(230,230,230,0.85)',
                 spinner : 'double-bounce', // available: 'rotating-plane' | 'double-bounce' | 'wave' | 'wandering-cubes' | 'spinner-pulse' | 'chasing-dots' | 'three-bounce' | 'circle' | 'cube-grid' | 'fading-circle' | 'folding-cube'
                 spinColor : '#d2d2d2',
                 titleattr: 'title', // specific attribute to get a title (e.g. [data-title]) - thanx @mendezcode
