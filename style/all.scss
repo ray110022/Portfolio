@@ -1,5 +1,3 @@
-@import 'masonry';
-
 $st-color: #4dc97d;
 $nd-color: #39b869;
 $bg-color: #252525;
@@ -310,7 +308,7 @@ header {
     .arrow {
         position: absolute;
         animation: arrow 2s infinite;
-        opacity: .8;
+        opacity: 1;
         bottom: 50px;
         left: 50%;
         transform: translateX(-50%);
@@ -347,9 +345,6 @@ header {
         font-weight: 500;
     }
 
-    p {
-        opacity: .8;
-    }
 }
 
 @media (max-width: 1140px) {
